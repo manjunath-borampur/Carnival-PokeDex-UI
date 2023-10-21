@@ -1,0 +1,35 @@
+.center{
+    display: flex;
+    justify-content: center;
+    color: navy;
+    font-size: 20px;
+}
+
+.width{
+    height: 300px;
+    cursor: pointer;
+}
+
+.typeClass{
+    display: flex;
+    justify-content:space-around;
+    color: red;
+}
+
+.stickyHeader {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #cccccc;
+    padding: 10px;
+    z-index: 999;
+  }
+  
+  .content {
+    margin-top: 80px;
+  }
+
+  h1 {
+    text-shadow: 2px 2px 8px #FF0000;
+  }

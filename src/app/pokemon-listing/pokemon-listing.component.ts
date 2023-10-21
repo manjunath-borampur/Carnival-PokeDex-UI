@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from '../common.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pokemon-listing',
@@ -8,17 +9,32 @@ import { CommonService } from '../common.service';
 })
 export class PokemonListingComponent implements OnInit{
 
-  constructor( private commonService : CommonService){
+  constructor( private commonService : CommonService, private router : Router){
 
   }
 
-  pokemonData:any;
+  pokemonData:any = [];
   ngOnInit(): void {
-    this.commonService.getPokemonDetails().then(res=>{
-      this.pokemonData = res;
-      console.log('res',this.pokemonData?.results);
-      
+    this.getAllPokemons();
+  }
+
+  getAllPokemons(){
+    this.commonService.getPokemonDetails().subscribe((res: any) => {
+      res?.results.forEach((result: any) => {
+        this.commonService.getMorePokemonDetails(result?.name).subscribe((data: any) => {
+          this.pokemonData.push(data)
+        })
+      });
     })
+  }
+
+  getFullDetails(pokemon:any){
+    this.router.navigateByUrl(`/details/${pokemon?.id}`)
+  }
+
+  onTextSearch:string = ''
+  receiveSearcVal(search:any){
+    this.onTextSearch = search;
   }
 
 }

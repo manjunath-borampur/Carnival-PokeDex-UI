@@ -1,0 +1,48 @@
+<div class="container card p-2 ">
+    <div class="row">
+        <div class="col-lg-12 contentEnd">
+            <button type="button" class="btn btn-outline-dark" (click)="goBack()">Back</button>
+        </div>
+    </div>
+</div>
+
+<div class="container card shadow-lg p-3 mb-5 bg-white rounded">
+    <div class="row">
+        <div class="col-lg-12 centerHeader">
+            <h3>{{details?.name}}</h3>
+        </div> <hr>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+                <img class="col-lg-6" [src]="details?.sprites?.front_default" alt="Front Pokemon">
+                <img class="col-lg-6" [src]="details?.sprites?.back_default" alt="Back Pokemon">
+                <img class="col-lg-6" [src]="details?.sprites?.back_shiny" alt="Skiny back Pokemon">
+                <img class="col-lg-6" [src]="details?.sprites?.front_shiny" alt="Skiny front Pokemon">
+        </div>
+        <div class="col-lg-6 vl">
+            <p>Abilities : <span *ngFor="let ability of details?.abilities"><span class="abilityClass mt-4">{{ability?.ability?.name}}, </span></span></p>
+            <p>Heigth : {{details?.height}}</p>
+            <p>Weigth : {{details?.weight}}</p>
+            <p>Base Experience : {{details?.base_experience}}</p>
+
+              <div class="progress m-4">
+                <div class="progress-bar bg-warning" role="progressbar" style="width: {{details?.stats[1]?.base_stat}}% " aria-valuemin="0" aria-valuemax="100">Attacks - {{details?.stats[1]?.base_stat}}%</div>
+              </div>
+              <div class="progress m-4">
+                <div class="progress-bar bg-warning" role="progressbar" style="width: {{details?.stats[3]?.base_stat}}% " aria-valuemin="0" aria-valuemax="100">Special-Attacks - {{details?.stats[3]?.base_stat}}%</div>
+              </div>
+              <div class="progress m-4">
+                <div class="progress-bar bg-danger" role="progressbar" style="width: {{details?.stats[2]?.base_stat}}% " aria-valuemin="0" aria-valuemax="100">Defense - {{details?.stats[2]?.base_stat}}%</div>
+              </div>
+              <div class="progress m-4">
+                <div class="progress-bar bg-danger" role="progressbar" style="width: {{details?.stats[4]?.base_stat}}% " aria-valuemin="0" aria-valuemax="100">Special-Defense - {{details?.stats[4]?.base_stat}}%</div>
+              </div>
+              <div class="progress m-4">
+                <div class="progress-bar  bg-info" role="progressbar" style="width: {{details?.stats[5]?.base_stat}}% " aria-valuemin="0" aria-valuemax="100">Speed - {{details?.stats[5]?.base_stat}}%</div>
+              </div>
+              <div class="progress m-4">
+                <div class="progress-bar  bg-success" role="progressbar" style="width: {{details?.stats[0]?.base_stat}}% " aria-valuemin="0" aria-valuemax="100">HP - {{details?.stats[0]?.base_stat}}%</div>
+              </div>
+        </div>
+    </div>
+</div>

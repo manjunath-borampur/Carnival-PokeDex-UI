@@ -1,1 +1,49 @@
-<p>pokemon-listing works!</p>
+<header class="stickyHeader row">
+    <div class="col-md-12 col-lg-8">
+        <h1>Karnival</h1>
+    </div>
+    <div class="col-md-12 col-lg-4">
+        <app-header (emitSearchValue)="receiveSearcVal($event)"></app-header>
+    </div>
+</header>
+
+<div class="content">
+    <div class="row m-2 mt-5">
+        <ng-container *ngFor="let pokemon of pokemonData">
+            <div class="col-md-6 col-lg-3" *ngIf="onTextSearch==='' || pokemon.name.toLowerCase().includes(onTextSearch)">
+                <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+                    <div class="card-body row width" (click)="getFullDetails(pokemon)">
+                        <div class="col-12 center">
+                            <h3>{{pokemon?.name}}</h3>
+                        </div>
+                        <div class="col-8">
+                            <p>Heigth : {{pokemon?.height}}</p>
+                            <p>Weigth : {{pokemon?.weight}}</p>
+                            <p>Base Exp : {{pokemon?.base_experience}}</p>
+                        </div>
+                        <div class="col-4">
+                            <img [src]="pokemon?.sprites?.front_default" alt="Image">
+                        </div>
+                        <ng-container class="row" *ngFor="let type of pokemon?.types">
+                            <h6 class="col-lg-6 typeClass">{{type?.type?.name}}</h6>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+            </li>
+        </ul>
+    </nav>
+</div>
