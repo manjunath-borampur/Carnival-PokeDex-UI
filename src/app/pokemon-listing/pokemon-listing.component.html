@@ -2,8 +2,14 @@
     <div class="col-md-12 col-lg-8">
         <h1>Karnival</h1>
     </div>
-    <div class="col-md-12 col-lg-4">
+    <div class="col-md-10 col-lg-3">
         <app-header (emitSearchValue)="receiveSearcVal($event)"></app-header>
+    </div>
+    <div class="col-md-2 col-lg-1 mt-3">
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" [checked]="isSwitchOn" (change)="onChange($event)">
+            <label class="form-check-label" for="flexSwitchCheckChecked">{{isSwitchOn?' Standard' :' Gif'}}</label>
+        </div>
     </div>
 </header>
 
@@ -22,7 +28,8 @@
                             <p>Base Exp : {{pokemon?.base_experience}}</p>
                         </div>
                         <div class="col-4">
-                            <img [src]="pokemon?.sprites?.front_default" alt="Image">
+                            <img *ngIf="isSwitchOn" [src]="pokemon?.sprites?.front_default" alt="Image">
+                            <img *ngIf="!isSwitchOn" src="https://projectpokemon.org/images/normal-sprite/{{pokemon?.name}}.gif" alt="pokemon Gif">
                         </div>
                         <ng-container class="row" *ngFor="let type of pokemon?.types">
                             <h6 class="col-lg-6 typeClass">{{type?.type?.name}}</h6>

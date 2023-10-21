@@ -40,4 +40,9 @@ export class PokemonListingComponent implements OnInit{
     this.onTextSearch = search;
   }
 
+  isSwitchOn:boolean = false;
+  onChange(event:any){
+    this.isSwitchOn = !this.isSwitchOn;
+  }
+
 }
