@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from '../common.service';
 import { Router } from '@angular/router';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-pokemon-listing',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class PokemonListingComponent implements OnInit{
 
-  constructor( private commonService : CommonService, private router : Router){
+  constructor( private commonService : CommonService, private router : Router, private ngxLoader : NgxUiLoaderService){
 
   }
 
@@ -19,12 +20,14 @@ export class PokemonListingComponent implements OnInit{
   }
 
   getAllPokemons(){
+    this.ngxLoader.start();
     this.commonService.getPokemonDetails().subscribe((res: any) => {
       res?.results.forEach((result: any) => {
         this.commonService.getMorePokemonDetails(result?.name).subscribe((data: any) => {
           this.pokemonData.push(data)
         })
       });
+      this.ngxLoader.stop();
     })
   }
 

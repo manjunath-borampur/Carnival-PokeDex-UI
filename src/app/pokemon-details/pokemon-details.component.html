@@ -26,22 +26,22 @@
             <p>Base Experience : {{details?.base_experience}}</p>
 
               <div class="progress m-4">
-                <div class="progress-bar bg-warning" role="progressbar" style="width: {{details?.stats[1]?.base_stat}}% " aria-valuemin="0" aria-valuemax="100">Attacks - {{details?.stats[1]?.base_stat}}%</div>
+                <div class="progress-bar bg-warning" role="progressbar" [style.width]="details?.stats[1]?.base_stat+'%'" aria-valuemin="0" aria-valuemax="100">Attacks - {{details?.stats[1]?.base_stat}}%</div>
               </div>
               <div class="progress m-4">
-                <div class="progress-bar bg-warning" role="progressbar" style="width: {{details?.stats[3]?.base_stat}}% " aria-valuemin="0" aria-valuemax="100">Special-Attacks - {{details?.stats[3]?.base_stat}}%</div>
+                <div class="progress-bar bg-warning" role="progressbar" [style.width]="details?.stats[3]?.base_stat+'%'" aria-valuemin="0" aria-valuemax="100">Special-Attacks - {{details?.stats[3]?.base_stat}}%</div>
               </div>
               <div class="progress m-4">
-                <div class="progress-bar bg-danger" role="progressbar" style="width: {{details?.stats[2]?.base_stat}}% " aria-valuemin="0" aria-valuemax="100">Defense - {{details?.stats[2]?.base_stat}}%</div>
+                <div class="progress-bar bg-danger" role="progressbar" [style.width]="details?.stats[2]?.base_stat+'%'" aria-valuemin="0" aria-valuemax="100">Defense - {{details?.stats[2]?.base_stat}}%</div>
               </div>
               <div class="progress m-4">
-                <div class="progress-bar bg-danger" role="progressbar" style="width: {{details?.stats[4]?.base_stat}}% " aria-valuemin="0" aria-valuemax="100">Special-Defense - {{details?.stats[4]?.base_stat}}%</div>
+                <div class="progress-bar bg-danger" role="progressbar" [style.width]="details?.stats[4]?.base_stat+'%'" aria-valuemin="0" aria-valuemax="100">Special-Defense - {{details?.stats[4]?.base_stat}}%</div>
               </div>
               <div class="progress m-4">
-                <div class="progress-bar  bg-info" role="progressbar" style="width: {{details?.stats[5]?.base_stat}}% " aria-valuemin="0" aria-valuemax="100">Speed - {{details?.stats[5]?.base_stat}}%</div>
+                <div class="progress-bar  bg-info" role="progressbar" [style.width]="details?.stats[5]?.base_stat+'%'" aria-valuemin="0" aria-valuemax="100">Speed - {{details?.stats[5]?.base_stat}}%</div>
               </div>
               <div class="progress m-4">
-                <div class="progress-bar  bg-success" role="progressbar" style="width: {{details?.stats[0]?.base_stat}}% " aria-valuemin="0" aria-valuemax="100">HP - {{details?.stats[0]?.base_stat}}%</div>
+                <div class="progress-bar  bg-success" role="progressbar" [style.width]="details?.stats[0]?.base_stat+'%'" aria-valuemin="0" aria-valuemax="100">HP - {{details?.stats[0]?.base_stat}}%</div>
               </div>
         </div>
     </div>
