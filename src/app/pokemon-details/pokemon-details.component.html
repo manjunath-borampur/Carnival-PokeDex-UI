@@ -14,10 +14,10 @@
     </div>
     <div class="row">
         <div class="col-lg-6">
-                <img class="col-lg-6" [src]="details?.sprites?.front_default" alt="Front Pokemon">
-                <img class="col-lg-6" [src]="details?.sprites?.back_default" alt="Back Pokemon">
-                <img class="col-lg-6" [src]="details?.sprites?.back_shiny" alt="Skiny back Pokemon">
-                <img class="col-lg-6" [src]="details?.sprites?.front_shiny" alt="Skiny front Pokemon">
+                <img class="col-lg-6 imgWidth" [src]="details?.sprites?.front_default" alt="Front Pokemon">
+                <img class="col-lg-6 imgWidth" [src]="details?.sprites?.back_default" alt="Back Pokemon">
+                <img class="col-lg-6 imgWidth" [src]="details?.sprites?.back_shiny" alt="Skiny back Pokemon">
+                <img class="col-lg-6 imgWidth" [src]="details?.sprites?.front_shiny" alt="Skiny front Pokemon">
         </div>
         <div class="col-lg-6 vl">
             <p>Abilities : <span *ngFor="let ability of details?.abilities"><span class="abilityClass mt-4">{{ability?.ability?.name}}, </span></span></p>

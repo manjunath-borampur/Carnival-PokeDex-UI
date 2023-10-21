@@ -8,8 +8,9 @@ export class CommonService {
 
   constructor( private http : HttpClient) { }
 
+  // I am planning to take only 200 Pokemon from API that why i have added limit=200;
   getPokemonDetails(){
-    return this.http.get('https://pokeapi.co/api/v2/pokemon?limit=10');
+    return this.http.get('https://pokeapi.co/api/v2/pokemon?limit=200');
   }
 
   getMorePokemonDetails(name:any){

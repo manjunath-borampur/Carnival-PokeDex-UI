@@ -9,6 +9,7 @@ import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.compo
 import { HeaderComponent } from './header/header.component'
 import { FormsModule } from '@angular/forms';
 import { NgxUiLoaderConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule, NgxUiLoaderRouterModule, POSITION, SPINNER } from 'ngx-ui-loader';
+import { PaginationComponent } from './pagination/pagination.component';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
 bgsColor: "rgba(12,80,219,0.98)",
@@ -26,6 +27,7 @@ fgsPosition: POSITION.centerCenter
     PokemonListingComponent,
     PokemonDetailsComponent,
     HeaderComponent,
+    PaginationComponent,
   ],
   imports: [
     BrowserModule,

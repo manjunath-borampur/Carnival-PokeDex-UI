@@ -1,0 +1,17 @@
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+
+        <li class="page-item ">
+            <a class="page-link" (click)="onPageClick(currentPage - 1)" [ngClass]="{disabled:(currentPage)===1}">Previous</a>
+        </li>
+
+        <li
+        (click)="onPageClick(page)"
+         *ngFor="let page of pages"
+         class="page-item" [ngClass]="{active:page ===currentPage}"><a class="page-link" href="javascript:void(0)">{{page}}</a></li>
+
+        <li class="page-item">
+            <a class="page-link" (click)="onPageClick(currentPage + 1)" [ngClass]="{disabled:(currentPage*itemPerPage)===totalItems}">Next</a>
+        </li>
+    </ul>
+</nav>
